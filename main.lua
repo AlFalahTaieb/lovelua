@@ -17,20 +17,26 @@
 function love.load()
     x = 300
     y = 300
+    listOfRec = {}
     -- move = 600
     drawRectangle()
 end
 
 function drawRectangle()
+    r = love.math.random()
+    g = love.math.random()
+    b = love.math.random()
+    love.graphics.setColor(r, g, b)
     rectangle = {}
     rectangle.width = 50
     rectangle.height = 50
     rectangle.x = 300
     rectangle.y = 200
-    rectangle.speed=100
+    rectangle.speed = 100
+    return rectangle
 end
 function drawCercle()
-    love.graphics.setColor(1, 0, 0)
+    love.graphics.setColor(love.math.random(), love.math.random(), love.math.random())
     love.graphics.circle('fill', x, y, 50, 100)
 end
 
@@ -49,11 +55,19 @@ function move(dt)
     end
 end
 
+function love.keypressed(key)
+    if key == 'space' then
+        table.insert(listOfRec, drawRectangle())
+    end
+end
 function love.update(dt)
-    -- move(dt)
-    rectangle.x = rectangle.x + rectangle.speed*dt
+    for i, v in ipairs(listOfRec) do
+        v.x = v.x + v.speed * dt
+    end
 end
 
 function love.draw()
-    love.graphics.rectangle('line',rectangle.x,rectangle.y,rectangle.height,rectangle.width)
+    for i, v in ipairs(listOfRec) do
+        love.graphics.rectangle('line', v.x, v.y, v.height, v.width)
+    end
 end
