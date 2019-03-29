@@ -3,3 +3,6 @@
 Learning LÖVE2D with Lua
 
 to run you have to do in the dir `love ./`
+
+When you want to concateing variable use as Exemple
+> ` "Hello" ..var.. "Nice to meet you"`
