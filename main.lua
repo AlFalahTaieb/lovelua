@@ -19,22 +19,11 @@ function love.load()
     y = 300
     listOfRec = {}
     -- move = 600
+    require('rectangle')
     drawRectangle()
 end
 
-function drawRectangle()
-    r = love.math.random()
-    g = love.math.random()
-    b = love.math.random()
-    love.graphics.setColor(r, g, b)
-    rectangle = {}
-    rectangle.width = 50
-    rectangle.height = 50
-    rectangle.x = 300
-    rectangle.y = 200
-    rectangle.speed = 100
-    return rectangle
-end
+
 function drawCercle()
     love.graphics.setColor(love.math.random(), love.math.random(), love.math.random())
     love.graphics.circle('fill', x, y, 50, 100)
