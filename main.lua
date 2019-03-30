@@ -15,8 +15,8 @@
 -- print(intro('Chdoula','devCowboy','26'))
 
 function love.load()
-    x = 300
-    y = 300
+    -- x = 300
+    -- y = 300
     listOfRec = {}
     -- move = 600
     require('rectangle')
@@ -24,39 +24,15 @@ function love.load()
 end
 
 
-function drawCercle()
-    love.graphics.setColor(love.math.random(), love.math.random(), love.math.random())
-    love.graphics.circle('fill', x, y, 50, 100)
-end
 
-function move(dt)
-    if love.keyboard.isDown('right') then
-        x = x + 100 * dt
-    end
-    if love.keyboard.isDown('left') then
-        x = x - 100 * dt
-    end
-    if love.keyboard.isDown('up') then
-        y = y - 100 * dt
-    end
-    if love.keyboard.isDown('down') then
-        y = y + 100 * dt
-    end
-end
 
 function love.keypressed(key)
-    if key == 'space' then
-        table.insert(listOfRec, drawRectangle())
-    end
+    moveRectangle(key)
 end
 function love.update(dt)
-    for i, v in ipairs(listOfRec) do
-        v.x = v.x + v.speed * dt
-    end
+    updateSpeed(dt)
 end
 
 function love.draw()
-    for i, v in ipairs(listOfRec) do
-        love.graphics.rectangle('line', v.x, v.y, v.height, v.width)
-    end
+    drawManyRec()
 end
