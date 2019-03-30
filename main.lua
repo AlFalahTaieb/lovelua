@@ -1,13 +1,9 @@
-
 function love.load()
-    listOfRec = {}
-    require('rectangle')
-    drawRectangle()
-    
+    -- listOfRec = {}
+    -- require('rectangle')
+    -- drawRectangle()
+    Object = require 'classic'
 end
-
-
-
 
 function love.keypressed(key)
     moveRectangle(key)
