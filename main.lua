@@ -1,11 +1,9 @@
 
 function love.load()
-    -- x = 300
-    -- y = 300
     listOfRec = {}
-    -- move = 600
     require('rectangle')
     drawRectangle()
+    
 end
 
 
