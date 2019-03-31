@@ -2,12 +2,14 @@ Pad = Entity:extend()
 
 function Pad:new()
     Pad.super.new(self, 50, 100, 10, 100)
+    self.keyUp = "up"
+    self.keyDown = "down"
 end
 
 function Pad:update(dt)
-    if love.keyboard.isDown('up') then
+    if love.keyboard.isDown(self.keyUp) then
         self.ySpeed = -400
-    elseif love.keyboard.isDown('down') then
+    elseif love.keyboard.isDown(self.keyDown) then
         self.ySpeed = 400
     else
         self.ySpeed = 0

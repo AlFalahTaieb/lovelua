@@ -15,5 +15,9 @@ function Entity:update(dt)
 end
 
 function Entity:draw()
+    r = love.math.random()
+    g = love.math.random()
+    b = love.math.random()
+    love.graphics.setColor(r, g, b)
     love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end
