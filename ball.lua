@@ -22,6 +22,7 @@ function Ball:bounce(e)
 
     if left1 < right2 and right1 > left2 and top1 < bottom2 and bottom1 > top2 then
         self.xSpeed = -self.xSpeed
+        love.audio.play(sounds["paddleHit"])
     end
 end
 

@@ -10,6 +10,20 @@ function love.load()
     require('ball')
 
     game = Game()
+    love.graphics.setBackgroundColor(0.1, 0.1, 0.1)
+    love.graphics.setColor(1, 1, 1, 1)
+
+    gameState = "main"
+
+    -- Set the initial game mode
+    gameMode = "solo"
+    love.audio.setVolume(0.20)
+    sounds =
+    {
+        paddleHit = love.audio.newSource("sounds/ping.ogg", "static"),
+
+    }
+    -- secondaryPlayerSetup()
 end
 
 -- function love.keypressed(key)
@@ -30,3 +44,5 @@ function love.keypressed(k)
         love.load()
     end
 end
+
+

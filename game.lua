@@ -25,6 +25,7 @@ function Game:update(dt)
         self.ball = Ball()
     elseif ball_stat == 'right' then
         self.scoreGauche = self.scoreGauche + 1
+        
         self.ball = Ball()
     end
 end
@@ -32,6 +33,23 @@ end
 function Game:draw()
     self.padGauche:draw()
     self.padDroite:draw()
+
     self.ball:draw()
-    love.graphics.print(self.scoreDroite .. '-' .. self.scoreGauche, 350,10,0,2,2)
+    love.graphics.print(self.scoreDroite .. '-' .. self.scoreGauche, 350, 10, 0, 2, 2)
+end
+
+-- AI --
+
+
+
+function secondaryPlayerSetup()
+    --[[
+        If this is the first time the right paddle is created, set it up at the initial
+        starting location, otherwise set it to the old paddle's location.
+    ]]
+    if padGauche == nil then
+        padGauche = Pad:Create(self.padDroite.x, self.padDroite.y, 'up', 'down', false)
+    else
+        padGauche = Pad:Create(self.padDroite.xSpeed, self.padDroite.ySpeed, 'up', 'down', false)
+    end
 end

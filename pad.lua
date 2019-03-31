@@ -9,6 +9,7 @@ end
 function Pad:update(dt)
     if love.keyboard.isDown(self.keyUp) then
         self.ySpeed = -400
+        
     elseif love.keyboard.isDown(self.keyDown) then
         self.ySpeed = 400
     else
