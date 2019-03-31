@@ -7,12 +7,17 @@ self.padDroite.x = 740
 self.padDroite.keyUp="z"
 self.padDroite.keyDown="s"
 self.ball = Ball()
+
+self.scoreGauche = 0
+self.scoreDroite = 0
 end
 
 function Game:update(dt)
 self.padDroite:update(dt)
 self.padGauche:update(dt)
 self.ball:update(dt)
+self.ball:bounce(self.padDroite)
+self.ball:bounce(self.padGauche)
 end
 
 function Game:draw()

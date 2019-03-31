@@ -18,7 +18,7 @@ function Entity:update(dt)
     elseif self.y + self.height>= 600 then
         self.y = 600 - self.height
         self.ySpeed = -self.ySpeed
-    endss
+    end
 end
 
 function Entity:draw()
