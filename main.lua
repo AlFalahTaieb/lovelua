@@ -24,3 +24,9 @@ function love.draw()
     -- drawManyRec()
     game:draw()
 end
+
+function love.keypressed(k)
+    if k == 'r' then
+        love.load()
+    end
+end

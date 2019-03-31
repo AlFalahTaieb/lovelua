@@ -27,9 +27,9 @@ end
 
 function Ball:checkScreen()
     if self.x + self.width < 0 then
-        return 'left'
+        return "left"
     elseif self.x > 800 then
-        return 'right'
+        return "right"
     else
         return false
     end
