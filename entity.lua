@@ -6,7 +6,7 @@ function Entity:new(x, y, width, height)
     self.width = width
     self.height = height
     self.xSpeed = 0
-    sekf.ySpeed = 0
+    self.ySpeed = 0
 end
 
 function Entity:update(dt)
