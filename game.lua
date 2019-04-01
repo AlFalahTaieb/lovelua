@@ -4,11 +4,11 @@ largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
 scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
 
 function Game:new()
-    self.padGauche = Pad("left")
-    self.padDroite = Pad("right")
+    self.padGauche = Pad('left')
+    self.padDroite = Pad('right')
     self.padDroite.x = 740
-    self.padDroite.keyUp = 'z'
-    self.padDroite.keyDown = 's'
+    -- self.padDroite.keyUp = 'z'
+    -- self.padDroite.keyDown = 's'
     self.ball = Ball()
     self.scoreGauche = 0
     self.scoreDroite = 0
@@ -29,10 +29,9 @@ function Game:update(dt)
         self.scoreGauche = self.scoreGauche + 1
         self.ball = Ball()
     end
-
-
 end
-
+function followBall()
+end
 function Game:draw()
     self.padGauche:draw()
     self.padDroite:draw()
@@ -42,7 +41,7 @@ function Game:draw()
 
     love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
 
-    love.graphics.print(tostring(self.scoreGauche), 450  , 10 / 3)
+    love.graphics.print(tostring(self.scoreGauche), 450, 10 / 3)
 end
 
 function drawScores()
@@ -50,5 +49,3 @@ function drawScores()
     love.graphics.print(self.scoreDroite, 'center')
     love.graphics.print(self.scoreGauche, 'center')
 end
-
-
