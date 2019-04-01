@@ -1,4 +1,5 @@
 function love.load()
+    vsync = true
     love.window.setTitle('Pong')
     -- listOfRec = {}
     -- require('rectangle')
@@ -13,15 +14,16 @@ function love.load()
     love.graphics.setBackgroundColor(0.1, 0.1, 0.1)
     love.graphics.setColor(1, 1, 1, 1)
 
-    gameState = "main"
+    gameState = 'main'
 
     -- Set the initial game mode
-    gameMode = "solo"
+    gameMode = 'solo'
     love.audio.setVolume(0.20)
-    sounds =
-    {
-        paddleHit = love.audio.newSource("sounds/ping.ogg", "static"),
 
+
+    sounds = {
+        hit = love.audio.newSource('sounds/ping.ogg', 'static'),
+        score = love.audio.newSource('sounds/pong.ogg', 'static')
     }
     -- secondaryPlayerSetup()
 end
@@ -44,5 +46,3 @@ function love.keypressed(k)
         love.load()
     end
 end
-
-

@@ -22,14 +22,16 @@ function Ball:bounce(e)
 
     if left1 < right2 and right1 > left2 and top1 < bottom2 and bottom1 > top2 then
         self.xSpeed = -self.xSpeed
-        love.audio.play(sounds["paddleHit"])
+        love.audio.play(sounds["hit"])
     end
 end
 
 function Ball:checkScreen()
     if self.x + self.width < 0 then
+        love.audio.play(sounds["score"])
         return "left"
     elseif self.x > 800 then
+        love.audio.play(sounds["score"])
         return "right"
     else
         return false

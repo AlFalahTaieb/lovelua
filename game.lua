@@ -1,5 +1,9 @@
 Game = Object:extend()
-
+smallFont = love.graphics.newFont('fonts/pong.ttf', 8)
+largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
+scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
+gameWidth = 432
+gameHeight = 243
 function Game:new()
     self.padGauche = Pad()
     self.padDroite = Pad()
@@ -25,7 +29,6 @@ function Game:update(dt)
         self.ball = Ball()
     elseif ball_stat == 'right' then
         self.scoreGauche = self.scoreGauche + 1
-        
         self.ball = Ball()
     end
 end
@@ -35,12 +38,23 @@ function Game:draw()
     self.padDroite:draw()
 
     self.ball:draw()
-    love.graphics.print(self.scoreDroite .. '-' .. self.scoreGauche, 350, 10, 0, 2, 2)
+    -- drawScores()
+    -- love.graphics.print(self.scoreDroite .. '-' .. self.scoreGauche, 350, 10, 0, 2, 2)
+    -- draw players scores
+    love.graphics.setFont(scoreFont)
+
+    love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
+
+    love.graphics.print(tostring(self.scoreGauche), 450  , 10 / 3)
+end
+
+function drawScores()
+    love.graphics.setFont(scoreFont)
+    love.graphics.print(self.scoreDroite, 'center')
+    love.graphics.print(self.scoreGauche, 'center')
 end
 
 -- AI --
-
-
 
 function secondaryPlayerSetup()
     --[[
