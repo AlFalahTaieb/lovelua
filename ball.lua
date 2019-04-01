@@ -24,6 +24,7 @@ function Ball:bounce(e)
         self.xSpeed = -self.xSpeed
         love.audio.play(sounds["hit"])
     end
+
 end
 
 function Ball:checkScreen()
@@ -36,4 +37,5 @@ function Ball:checkScreen()
     else
         return false
     end
+
 end

@@ -2,8 +2,7 @@ Game = Object:extend()
 smallFont = love.graphics.newFont('fonts/pong.ttf', 8)
 largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
 scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
-gameWidth = 432
-gameHeight = 243
+
 function Game:new()
     self.padGauche = Pad()
     self.padDroite = Pad()
@@ -11,7 +10,6 @@ function Game:new()
     self.padDroite.keyUp = 'z'
     self.padDroite.keyDown = 's'
     self.ball = Ball()
-
     self.scoreGauche = 0
     self.scoreDroite = 0
 end
@@ -31,6 +29,8 @@ function Game:update(dt)
         self.scoreGauche = self.scoreGauche + 1
         self.ball = Ball()
     end
+
+
 end
 
 function Game:draw()
@@ -38,9 +38,6 @@ function Game:draw()
     self.padDroite:draw()
 
     self.ball:draw()
-    -- drawScores()
-    -- love.graphics.print(self.scoreDroite .. '-' .. self.scoreGauche, 350, 10, 0, 2, 2)
-    -- draw players scores
     love.graphics.setFont(scoreFont)
 
     love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
@@ -54,16 +51,4 @@ function drawScores()
     love.graphics.print(self.scoreGauche, 'center')
 end
 
--- AI --
 
-function secondaryPlayerSetup()
-    --[[
-        If this is the first time the right paddle is created, set it up at the initial
-        starting location, otherwise set it to the old paddle's location.
-    ]]
-    if padGauche == nil then
-        padGauche = Pad:Create(self.padDroite.x, self.padDroite.y, 'up', 'down', false)
-    else
-        padGauche = Pad:Create(self.padDroite.xSpeed, self.padDroite.ySpeed, 'up', 'down', false)
-    end
-end
