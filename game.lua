@@ -4,8 +4,8 @@ largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
 scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
 
 function Game:new()
-    self.padGauche = Pad()
-    self.padDroite = Pad()
+    self.padGauche = Pad("left")
+    self.padDroite = Pad("right")
     self.padDroite.x = 740
     self.padDroite.keyUp = 'z'
     self.padDroite.keyDown = 's'
