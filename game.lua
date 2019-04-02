@@ -21,7 +21,20 @@ function Game.load()
 end
 
 function Game:update(dt)
-
+    mouse.x, mouse.y = love.mouse.getPosition()
+ 
+	-- if self.padDroite.x < self.ball.x then
+	-- 	self.padDroite.x = self.padDroite.x + (self.padDroite.y * 2.5 * dt)
+	-- end
+	-- if self.padDroite.x > self.ball.x then
+	-- 	self.padDroite.x = self.padDroite.x - (self.padDroite.y * 2.5 * dt)
+	-- end
+	if self.padDroite.y < self.ball.y then
+		self.padDroite.y = self.padDroite.y + (self.padDroite.y * 2.5 * dt)
+	end
+	if self.padDroite.y > self.ball.y then
+		self.padDroite.y = self.padDroite.y - (self.padDroite.y * 2.5 * dt)
+	end
     self.padDroite:update(dt)
     self.padGauche:update(dt)
     self.ball:update(dt)
