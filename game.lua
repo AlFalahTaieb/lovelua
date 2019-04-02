@@ -2,11 +2,13 @@ Game = Object:extend()
 smallFont = love.graphics.newFont('fonts/pong.ttf', 8)
 largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
 scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
+mouse = {}
 
 function Game:new()
     self.padGauche = Pad('left')
     self.padDroite = Pad('right')
     self.padDroite.x = 740
+    -- self.padDroit.speed = 300
     -- self.padDroite.keyUp = 'z'
     -- self.padDroite.keyDown = 's'
     self.ball = Ball()
@@ -14,7 +16,12 @@ function Game:new()
     self.scoreDroite = 0
 end
 
+function Game.load()
+    self.padDroit.speed = 300
+end
+
 function Game:update(dt)
+
     self.padDroite:update(dt)
     self.padGauche:update(dt)
     self.ball:update(dt)
