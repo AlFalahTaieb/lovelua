@@ -8,7 +8,6 @@ function Game:new()
     self.padGauche = Pad('left')
     self.padDroite = Pad('right')
     self.padDroite.x = 740
-    -- self.padDroit.speed = 300
     -- self.padDroite.keyUp = 'z'
     -- self.padDroite.keyDown = 's'
     self.ball = Ball()
