@@ -8,5 +8,5 @@ When you want to concateing variable use as Exemple
 > ` "Hello" ..var.. "Nice to meet you"`
 
 
-`Game in Action  😍`
+`Game in Action `
 (pong Game)[https://i.imgur.com/dWMmKXw.png]
