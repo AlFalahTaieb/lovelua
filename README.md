@@ -1,4 +1,4 @@
-# LOVE2D With LUA
+# LOVE2D With LUA creating a pong game with an IA 
 ![](https://i.imgur.com/w4FgBBq.png)
 Learning LÖVE2D with Lua
 
@@ -9,4 +9,5 @@ When you want to concateing variable use as Exemple
 
 
 `Game in Action 😍`
-(pong Game)[https://i.imgur.com/dWMmKXw.png]
+
+![Pong Game](https://i.imgur.com/dWMmKXw.png)
