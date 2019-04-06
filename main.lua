@@ -14,12 +14,11 @@ function love.load()
     love.graphics.setBackgroundColor(0.1, 0.1, 0.1)
     love.graphics.setColor(1, 1, 1, 1)
 
-    gameState = 'main'
+    -- gameState = 'main'
 
-    -- Set the initial game mode
-    gameMode = 'solo'
+    -- -- Set the initial game mode
+    -- gameMode = 'solo'
     love.audio.setVolume(0.20)
-
 
     sounds = {
         hit = love.audio.newSource('sounds/ping.ogg', 'static'),
@@ -46,3 +45,4 @@ function love.keypressed(k)
         love.load()
     end
 end
+
