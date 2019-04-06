@@ -2,7 +2,6 @@ Game = Object:extend()
 smallFont = love.graphics.newFont('fonts/pong.ttf', 8)
 largeFont = love.graphics.newFont('fonts/pong.ttf', 16)
 scoreFont = love.graphics.newFont('fonts/pong.ttf', 32)
-mouse = {}
 
 function Game:new()
     self.padGauche = Pad('left')
@@ -17,6 +16,9 @@ end
 
 function Game.load()
     self.padDroit.speed = 300
+    gameMode = "solo"
+
+    gameModeChoice(gameMode)
 end
 
 function Game:update(dt)
@@ -45,7 +47,17 @@ end
 function followBall()
 end
 function Game:draw()
-    drawMenu()
+    -- drawMenu()
+    -- soloGame()
+    self.padGauche:draw()
+    self.padDroite:draw()
+
+    self.ball:draw()
+    love.graphics.setFont(scoreFont)
+
+    love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
+
+    love.graphics.print(tostring(self.scoreGauche), 450, 10 / 3)
 end
 
 function drawScores()
@@ -78,7 +90,16 @@ function love.keypressed(key)
     if gameMode == 'solo' then
         if key == 'space' then
             -- gameModeChoice(tostring(gameMode))
-            print(gameModeChoice(gameMode))
+            -- print(gameModeChoice(gameMode))
+            self.padGauche:draw()
+            self.padDroite:draw()
+        
+            self.ball:draw()
+            love.graphics.setFont(scoreFont)
+        
+            love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
+        
+            love.graphics.print(tostring(self.scoreGauche), 450, 10 / 3)
         end
     end
 end
@@ -95,13 +116,5 @@ function gameModeChoice(gameMode)
 end
 
 function soloGame()
-    self.padGauche:draw()
-    self.padDroite:draw()
 
-    self.ball:draw()
-    love.graphics.setFont(scoreFont)
-
-    love.graphics.print(tostring(self.scoreDroite), 350, 10 / 3)
-
-    love.graphics.print(tostring(self.scoreGauche), 450, 10 / 3)
 end
