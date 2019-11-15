@@ -1,11 +1,12 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ":bust_in_silhouette: new user"
+name: Create new
+about: Create a new 
+title: 'Create: HERE'
+labels: ":bust_in_silhouette: something"
 assignees: ''
 
 ---
+
 
 **Describe the bug**
 A clear and concise description of what the bug is.
