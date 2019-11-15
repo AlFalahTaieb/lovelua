@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: bug, duplicate
+labels: ":bust_in_silhouette: new user", ":robot:"
 assignees: ''
 
 ---
