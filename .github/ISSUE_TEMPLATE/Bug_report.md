@@ -2,7 +2,7 @@
 name: Create new
 about: Create a new 
 title: 'Create: HERE'
-labels: ["Test1","Test2"]
+labels: ":bust_in_silhouette: new user, :robot:"
 assignees: ''
 
 ---
