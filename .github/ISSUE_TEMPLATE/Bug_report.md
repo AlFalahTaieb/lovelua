@@ -2,7 +2,7 @@
 name: Create new
 about: Create a new 
 title: 'Create: HERE'
-labels: ":bust_in_silhouette: something" 
+labels: "Test1","Test2"
 assignees: ''
 
 ---
